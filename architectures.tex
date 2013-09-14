@@ -1,33 +1,45 @@
-\newcommand{\CLASSINPUTtoptextmargin}{1in}
-\newcommand{\CLASSINPUTbottomtextmargin}{1in}
-\newcommand{\CLASSINPUTinnersidemargin}{1in}
-\newcommand{\CLASSINPUToutersidemargin}{1in}
+%\documentclass{acm_proc_article-sp}
+\documentclass{sig-alternate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{multirow}
 
-\documentclass[10pt, conference, compsocconf]{IEEEtran}
+% Include PDF graphics, configure our images directory, and specify image types.
+\usepackage{graphicx}
+\usepackage{epsfig}
+\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
 
-\ifCLASSINFOpdf
-  \usepackage[pdftex]{graphicx}
-  \graphicspath{{./images/}}
-  \DeclareGraphicsExtensions{.pdf,.jpeg,.png,.jpg}
-\else
-  \usepackage[dvips]{graphicx}
-  \graphicspath{{./images/}}
-  \DeclareGraphicsExtensions{.eps}
-\fi
+% Style listings
+\lstset{%rulesepcolor=\color{Gray},
+        frame=single,                        	% Shadow box frame around code
+        basicstyle=\scriptsize\ttfamily,        % Use small true type font
+        showstringspaces=false,                 % Don't put marks in string spaces
+        morecomment=[l][\color{Blue}]{...},     % Line continuation (...) like blue comment
+}
 
 \begin{document}
 
-\title{Usage Management of Personal Health Records}
+\title{Toward Quantitative Emulation of Cloud Robotic Systems}
+
+\numberofauthors{1}
 
 \author{
-\IEEEauthorblockN{Christopher C. Lamb, Rafael Figueroa, Rafael Fierro}
-\IEEEauthorblockA{University of New Mexico\\
-Department of Electrical and Computer Engineering\\
-Albuquerque, NM 87131-0001 \\
-\{cclamb, rafa, rfierro\}@ece.unm.edu}
+\alignauthor
+Christopher C. Lamb, Rafael Figueroa, Rafael Fierro\\
+       \affaddr{University of New Mexico}\\
+       \affaddr{Department of Electrical and Computer Engineering}\\
+       \affaddr{Albuquerque, NM 87131-0001}\\
+       \email{\{cclamb, rafa, rfierro\}@ece.unm.edu}
 }
 
-
+\conferenceinfo{ICCPS '14,} {April 14-17, 2014, Berlin, Germany.} 
+\CopyrightYear{2014} 
+\crdata{978-1-4503-1005-5/11/10} 
+\clubpenalty=10000 
+\widowpenalty=10000
 
 \maketitle
 
@@ -35,18 +47,17 @@ Albuquerque, NM 87131-0001 \\
 Insert abstract here.
 \end{abstract}
 
-%\begin{IEEEkeywords}
-%usage management; personal health records
-%\end{IEEEkeywords}
-%\IEEEpeerreviewmaketitle
+\category{D.2.11}{Software}{Software Architectures}[Domain-specific Architectures]
+\terms{Design, Performance, Robotics}
+\keywords{Robotics, Cloud}
 
 \section{Introduction}
 Introduction to topic; why it is important, motivate reader.
 
-\section{Cyber-physical Cloud Architectures}
+\section{Cyber-physical Clouds}
 Highlight the problem we are starting to address.
 
-\subsection{A Taxonomoy of Architectures}
+\subsection{A Taxonomy of Architectures}
 Outline an initial taxonomy.
 
 \subsection{Initial Analysis of Taxonomy}
@@ -66,8 +77,6 @@ Cover previous work in area, especially motivating work.
 %\caption{System Architecture Runtime Component View}
 %\label{fig:RuntimeView}
 %\end{figure}
-
-
 
 \bibliographystyle{abbrv}
 \bibliography{bib/cps.bib}
