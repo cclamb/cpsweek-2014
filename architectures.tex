@@ -63,6 +63,23 @@ While the argument in favor of cloud computing for robotic systems mirrors that 
 In order to effectively build these kinds of systems, we must first understand what kinds of systems we could build, under what circumstances, and why.  
 
 \section{Cyber-physical Clouds}
+In 2012, Hu, Ta, and Wen outlined specific differences between specific types of robotic communication in clouds \cite{HuTaWe:12}.  Specifically, they rigorously described the differences between machine-to-machine and machine-to-cloud communications, and analysed optimum communication and computation distribution based on energy requirements.  A valid and useful perspective, we intend to expand this to provide practical guidance with respect to how partition computation and data storage from an implementation perspective.  We propose a structured way to look at cloud robotic systems based on the individual robot, the specific task, and the context in which the robot is executing that task.  Based on this description, we intend to establish quantitative guidance and qualitative heuristics that help system designers determine how storage, computation, and communication can be distributed and dynamically tuned in operational systems.
+
+First, we need to clearly define what we mean by {\sl cloud robotics}.  In order to clarify this frequently overloaded term, we turn to the US National Institute for Standards and Technology (NIST), the most authoritative group to yet propose a cloud computing definition.  In Special Publication 800-145, Mell and Grance go into great detail describing clouds and different cloud types~\cite{NIST-SP-800-145}. They define cloud computing as having five {\sl essential characteristics}, three {\sl service models}, and four {\sl deployment models}.  The service models include such logical functional partitions as Software as a Service, Infrastructure as a Service, and Platforms as a Service, while deployment models include various cloud types like public, private, hybrid, and community clouds.  Service models certainly have an impact on the type of computing offered to robotic platforms, in that robots could consume exposed cloud functions in any of these service models.  Interestingly, individual systems or constellations could be offered as a PaaS or IaaS offering to interested consumers as well, implying that as robots can take advantage of cloud computation, perhaps computational systems can take advantage of constellations of robots.  In the scope of our current work however, we are most interested currently in the five essential characteristics of cloud computation:
+
+\begin{itemize}
+\item {\bf On-demand Self Service} --- Services can be easily provisioned without human intervention at a service provider.
+\item {\bf Broad Network Access} --- Services are ubiquitously available via computer networks.
+\item {\bf Resource Pooling} --- There is a certain level of geographic opacity to computational services, and services are pooled and dynamically reassigned according to need.
+\item {\bf Rapid Elasticity} --- Services can rapidly scape up or down according to need.
+\item {\bf Measured Service} --- Service providers monitor offered services in order to more effectively manage them.
+\end{itemize}
+
+These characteristics allow us to differentiate between {\sl distributed} computation and {\sl cloud} computation.  For example, a fixed amount of data storage shared between members of a constellation would be distributed, while a virtually unlimited amount of storage shared between those same members would be a cloud service.  Likewise, a Hadoop~\cite{Hadoop} implementation in which $n$ nodes are reserved for each member would be distributed, while that same implementation with variable limits imposed by demand would be a cloud system.
+
+
+% Triples
+
 Highlight the problem we are starting to address.
 
 \subsection{A Taxonomy of Architectures}
