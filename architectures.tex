@@ -22,7 +22,7 @@
 
 \begin{document}
 
-\title{Toward Quantitative Emulation of Cloud Robotic Systems}
+\title{Toward Quantitative Emulation of Cloud Robotic Systems}q
 
 \numberofauthors{1}
 
@@ -81,10 +81,19 @@ These characteristics allow us to differentiate between {\sl distributed} comput
 
 Having established a baseline definition of the differences between distributed and cloud computing, we can begin to outline the various ways we can assemble cloud robotic systems.
 
-\subsection{A Taxonomy of Architectures}
+\subsection{Cloud Robotic Configurations}
 Computation services can be distributed throughout a constellation of autonomous systems.  The primary services we are interested in are processing and storage.  Communication is an important secondary service as cloud and distributed service acquisition and use, of any type, depends on communication capabilities.  This gives us three service attributes we must model to understand how different configurations impact system design.  Previous work has characterized services with respect to power consumption ~\cite{HuTaWe:12}.  While vital to designing effective robotic systems, system designers will have other characteristics in mind as well, including system latency, storage and computational performance, and overall quality of service.
 
-In the past, experimental work we have conducted with 
+Generally, we can expect robotic networks to adhere to generally accepted networking patterns: stars, buses, rings, meshes, point-to-point communication, and trees.  Of these generally accepted patterns, point-to-point communication degenerates into star networks with more than one participant, and can therefore be treated as a special case of a star network.  Communication exists ubiquitously, between all nodes, while specific services can be distributed heterogeneously throughout the network.  For example, all nodes may have some small amount of storage, but only specific dedicated nodes have extensive storage and the ability to manage information to in effect provide unlimited storage on demand.  Processing power can be likewise distributed.
+
+Furthermore, large networks of autonomous systems can be organized in hierarchical layers in a tree topology, similar to how the internet itself is organized.  Specific cloud services can be distributed within any and all of these layers, depending on specific operational needs.  In a typical service topology, we may have an operational layer, consisting of various sensor platforms and actuators.  That may be managed by a local layer, which is in turn managed by a regional and finally a centralized layer.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.49\textwidth]{blank}
+\caption{Service Distribution through Constellation.}
+\label{fig:example1}
+\end{figure}
 
 Hu et. al. established two communication primitives for cloud robotic systems --- machine-to-machine (m2m) and machine-to-cloud (m2c).  Using these two primitives as reusable communication components, we can assemble them into a variety of different configurations.
 
